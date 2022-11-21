@@ -17,9 +17,15 @@
             <a href="./index.html" class="logo">Web<span class="logo-black">Studio</span></a>
             <nav class="navigation">
                 <ul class="header-nav">
-                    <li><a class="header-nav-link" href="./index.html">Студія</a></li>
-                    <li><a class="header-nav-link" href="./portfolio.html">Портфоліо</a></li>
-                    <li><a class="header-nav-link" href="#">Контакти</a></li>
+                    <li class="header-nav-item">
+                        <a class="header-nav-link is-active" href="./index.html">Студія</a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="header-nav-link" href="./portfolio.html">Портфоліо</a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="header-nav-link" href="#">Контакти</a>
+                    </li>
                 </ul>
             </nav>
             <ul class="header-contact-list">
@@ -43,7 +49,7 @@
         <section class="main-page">
             <div class="container">
                 <h1>Ефективні рішення для <br /> вашого бізнесу</h1>
-                <button class="button" type="button">Замовити послугу</button>
+                <button class="button" type="button" data-modal-open>Замовити послугу</button>
             </div>
         </section>
 
@@ -392,15 +398,16 @@
             </div>
         </div>
     </footer>
-    <div class="backdrop">
+    <div class="backdrop is-hidden" data-modal>
         <div class="modal">
-            <button type="button" class="modal-close">
+            <button type="button" class="modal-close" data-modal-close>
                 <svg class="modal-close-icon" weight="14" height="14">
                     <use href="./images/icons.svg#icon-close-black"></use>
                 </svg>
             </button>
         </div>
     </div>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>

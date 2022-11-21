@@ -18,6 +18,8 @@ body {
 body a{
     text-decoration: none;
     color: #212121;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 ul {
@@ -37,13 +39,17 @@ img {
     max-height: 100%;
     height: auto;
 }
+button {
+    cursor: pointer;
+}
 
 /*header*/ 
 
 .header {
     background-color: #FFFFFF;
-    padding-top: 24px;
-    padding-bottom: 25px; 
+    /* padding-top: 24px; */
+    /* padding-bottom: 25px;  */
+    border-bottom: 1px solid #ECECEC;
 }
 .header-container {
     display: flex;
@@ -69,16 +75,32 @@ img {
 .header-nav {
     display: flex;
     gap: 50px;
+    position: relative;
 }
 .header-nav-link:hover,
 .header-nav-link:focus {
     color: #2196F3;
+}
+.header-nav-item .is-active::after {
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: #2196F3;
+    border-radius: 2px;
+}
+.header-nav-item {
+    display: flex;
+    position: relative;
 }
 .header-nav-link {
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
+    padding: 32px 0;
 }
 .header-contact-list {
     display: flex;
@@ -532,6 +554,7 @@ h5 {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
+    transition: opacity 250ms linear, visibility 250ms linear;
 }
 .modal {
     width: 528px;
@@ -542,17 +565,30 @@ h5 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scaleX(1);
+    transition: transform 300ms linear;
+}
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scaleX(0);
 }
 .modal-close {
     width: 30px;
     height: 30px;
-    background: #FFFFFF;
+    background: transparent;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    right: 8px;
+    top: 8px;
 }
 .modal-close-icon {
+    
+}
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
