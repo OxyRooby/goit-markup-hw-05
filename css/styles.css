@@ -17,7 +17,12 @@ body {
 
 body a{
     text-decoration: none;
-    color: #212121;
+    color: #212121;}
+
+body a,
+body a *,
+body button,
+body button * {
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
